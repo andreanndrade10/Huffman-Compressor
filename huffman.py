@@ -16,9 +16,9 @@ def main():
 	init()
 
 def init():
-	my_stringOrFile = input("Please enter a string or file to compress >>> ")
-	if my_stringOrFile.find("-c") != -1:
-		file = my_stringOrFile.split()[1]
+	my_stringorfile = input("Please enter a string or file to compress >>> ")
+	if my_stringorfile.find("-c") != -1:
+		file = my_stringorfile.split()[1]
 		print("You choose", file, "as file to be compressed...")
 		readFile(file)
 		return file 
@@ -55,8 +55,16 @@ def dictionary(contentFile):
 			dict[i]=1
 		else:
 			dict[i]+=1
-	print(dict)
+	proportions(dict, contentFile)
+	#print(dict)
 	return dict
+
+def proportions(dictionary, contentFile):
+	for key in dictionary:
+		dictionary[key] /= len(contentFile)
+	print(dictionary)
+	return dictionary
+
 
 
 main()
