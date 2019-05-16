@@ -3,10 +3,10 @@ import os, collections
 print(" ")
 print(" ")
 print("Andre Luiz Lourenço de Andrade - 14/0016295")
-print("Teoria da Informacao")
+print("Teoria da Informacao - Huffman Compressor")
 
 print(" ")
-print(" ")
+
 
 ####################################################################
 
@@ -62,7 +62,7 @@ def dictionary(contentFile):
 def proportions(dictionary, contentFile):
 	for key in dictionary:
 		dictionary[key] /= len(contentFile)
-	print(dictionary)
+	print(sorted(dictionary.values(), reverse=True))
 	return dictionary
 
 
