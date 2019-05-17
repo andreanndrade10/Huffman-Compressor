@@ -36,8 +36,8 @@ def readString(string):
 
 #open and read file
 def readFile(file):
-	f = open(file, "r", encoding="utf8")
-	if f.mode == 'r':
+	f = open(file, "rb")
+	if f.mode == 'rb':
 		content = f.read()
 		#print(content)
 		dictionary(content)
@@ -56,13 +56,13 @@ def dictionary(contentFile):
 		else:
 			dict[i]+=1
 	proportions(dict, contentFile)
-	#print(dict)
+	print(dict)
 	return dict
 
 def proportions(dictionary, contentFile):
 	for key in dictionary:
 		dictionary[key] /= len(contentFile)
-	print(sorted(dictionary.values(), reverse=True))
+	#print(sorted(dictionary.values(), reverse=True))
 	return dictionary
 
 
