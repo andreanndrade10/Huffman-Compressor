@@ -1,4 +1,5 @@
 import os, collections
+from binarytree import tree, bst, heap, build
 
 print(" ")
 print(" ")
@@ -23,7 +24,7 @@ def init():
 		readFile(file)
 		return file 
 	else:
-		string = my_stringOrFile
+		string = my_stringorFile
 		readString(string)
 		return string
 
@@ -56,15 +57,18 @@ def dictionary(contentFile):
 		else:
 			dict[i]+=1
 	proportions(dict, contentFile)
-	print(dict)
+	#print(dict)
 	return dict
 
 def proportions(dictionary, contentFile):
 	for key in dictionary:
 		dictionary[key] /= len(contentFile)
-	#print(sorted(dictionary.values(), reverse=True))
+	buildTree(dictionary)
 	return dictionary
 
+def buildTree(dictionary):
+	root = build(sorted(dictionary.values(), reverse = True	))
+	print(root)
 
 
 main()

@@ -8,3 +8,5 @@ Follow the steps:
 2. With your cmd opened, reach the folder you save the project and run the python script with `py huffman.py`
 3. To compress your file execute the command `-c yourfile.txt`
 
+
+
