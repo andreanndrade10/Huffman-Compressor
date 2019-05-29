@@ -15,12 +15,12 @@ def nRound(vector, root):
     a = vector.pop()
     b = vector.pop()
 
-    if a+b != 1:
+    if a+b < 1:
         vector.append(a+b)
         rootn = Node(a+b)
         rootn.right = tempRoot
         rootn.left = Node(b)
-        nRound(vector, rootn)
+        nRound(vector, rootn)    
     rootn = Node(a+b)
     rootn.right = tempRoot
     rootn.left = Node(b)
@@ -30,8 +30,6 @@ root = Node(.2)
 root.right = Node(.1)
 root.left = Node(.1)
 vector = [.3,.2,.2,.1,.2]
-
-
 print(nRound(vector, root))
 
 
