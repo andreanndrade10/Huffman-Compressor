@@ -73,14 +73,12 @@ def buildTree(proportions):
 	print(root)
 
 def function(proportions):
-	a = min(proportions)
-	proportions.remove(min(proportions))
-	b = min(proportions)
-	proportions.remove(min(proportions))
+	a = proportions.pop()
+	b = proportions.pop()
 	proportions.append(a+b)
 	root = Node(a+b)
-	root.left = Node(a)
-	root.right = Node(b)
+	root.left = Node(b)
+	root.right = Node(a)
 	print(root)	
 	print(proportions)
 
