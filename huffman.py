@@ -1,5 +1,5 @@
 import os, collections
-from binarytree import tree, bst, heap, build, Node
+import buildTree
 
 print(" ")
 print(" ")
@@ -72,15 +72,7 @@ def buildTree(proportions):
 	#print(proportions)
 	print(root)
 
-def function(proportions):
-	a = proportions.pop()
-	b = proportions.pop()
-	proportions.append(a+b)
-	root = Node(a+b)
-	root.left = Node(b)
-	root.right = Node(a)
-	print(root)	
-	print(proportions)
+
 
 
 main()
