@@ -65,7 +65,7 @@ def proportions(dictionary, contentFile):
 		dictionary[key] /= len(contentFile)
 		proportions = sorted(dictionary.values(), reverse=True)
 	#buildTree(proportions)
-	return dictionary
+	return proportions
 
 
 
