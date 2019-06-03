@@ -1,5 +1,5 @@
 import os, collections
-import buildTree
+from buildTree import firstRound
 
 print(" ")
 print(" ")
@@ -48,7 +48,7 @@ def contentSize(contentFile):
 	contentSize = len(contentFile)
 	return contentSize
 
-
+#Returns the dictionary with characters and how many times it appears in values
 def dictionary(contentFile):
 	dict = {}
 	for i in contentFile:
@@ -57,14 +57,14 @@ def dictionary(contentFile):
 		else:
 			dict[i]+=1
 	proportions(dict, contentFile)
-	#print(dict)
 	return dict
 
+# returns VECTOR with proportions
 def proportions(dictionary, contentFile):
 	for key in dictionary:
 		dictionary[key] /= len(contentFile)
 		proportions = sorted(dictionary.values(), reverse=True)
-	#buildTree(proportions)
+	firstRound(proportions)
 	return proportions
 
 

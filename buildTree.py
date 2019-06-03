@@ -4,10 +4,11 @@ def firstRound(vector):
     a = vector.pop()
     b = vector.pop()
     vector.append(a+b)
-    firstRoot = Node(a+b, b, a)
-    return vector, firstRoot
-
-
+    firstRoot = Node(a+b)
+    firstRoot.left = Node(b)
+    firstRoot.right= Node(a)
+    nRound(vector, firstRoot)
+    return [vector, firstRoot]
 
 def nRound(vector, root):
     tempRoot = root
@@ -18,8 +19,7 @@ def nRound(vector, root):
         rootn = Node(a+b)
         rootn.right = tempRoot
         rootn.left = Node(b)
-        return nRound(vector, rootn)
-        #return rootn     
+        return nRound(vector, rootn)   
     else:    
         rootn = Node(a+b)
         rootn.right = tempRoot
@@ -27,11 +27,7 @@ def nRound(vector, root):
         print(rootn)
         return rootn
 
-roota = Node(.2)
-roota.right = Node(.1)
-roota.left = Node(.1)
-vectora = [.3,.2,.2,.1,.2]
-print(nRound(vectora, roota))
+
 
 
 
