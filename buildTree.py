@@ -28,7 +28,7 @@ def nRound(vector, root):
         infoRoot(rootn)
         return rootn
 
-
+# Show informations about the tree and return the tree
 def infoRoot(rootn):
     tree = rootn
     print(tree)
@@ -45,16 +45,16 @@ def infoRoot(rootn):
     code(tree)
     return tree
 
-
+#Function return all leaves indexes of tree as a vector
 def code(tree):
     nNodes = tree.size
     nodes = list(range(nNodes))
     a = nodes.pop()
     vector = list(filter(lambda x: (x%2 != 0), nodes))
-    vector.append(a)
-    print("testando ssa porra aqui", vector)
+    vector.append(a)    
     return vector
-        
+
+      
 
         
 

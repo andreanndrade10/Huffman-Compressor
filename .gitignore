@@ -3,4 +3,7 @@
 #ignore temporary files
 *~
 #ignore /__pycache__
-.__pycache__
+__pycache__/
+#ignore .txt and png files
+*.txt
+*.png
