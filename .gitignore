@@ -1,5 +1,6 @@
-# Excluding /idea folder
+#ignore /idea folder
 .idea 
-# Excluding temporary files
+#ignore temporary files
 *~
-
+#ignore /__pycache__
+.__pycache__

@@ -24,12 +24,39 @@ def nRound(vector, root):
         rootn = Node(a+b)
         rootn.right = tempRoot
         rootn.left = Node(b) 
-        print(rootn)
+        #print(rootn)
+        infoRoot(rootn)
         return rootn
 
 
+def infoRoot(rootn):
+    tree = rootn
+    print(tree)
+    nLeaves = tree.leaf_count
+    #leaves = tree.leaves
+    maxNode = tree.max_node_value
+    treeHeight = tree.height 
+
+    print(" >> General information about your binary tree: ")
+    print('Max node value: ', maxNode)
+    print('Number of leaves: ', nLeaves)
+    #print('Leaves: ', leaves)
+    print('Tree height: ', treeHeight)
+    code(tree)
+    return tree
 
 
+def code(tree):
+    nNodes = tree.size
+    nodes = list(range(nNodes))
+    a = nodes.pop()
+    vector = list(filter(lambda x: (x%2 != 0), nodes))
+    vector.append(a)
+    print("testando ssa porra aqui", vector)
+    return vector
+        
+
+        
 
 
 
