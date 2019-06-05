@@ -12,6 +12,8 @@ print(" ")
 ####################################################################
 
 #return string or file choosen to compress
+keys = []
+
 
 def main():
 	init()
@@ -56,6 +58,7 @@ def dictionary(contentFile):
 			dict[i]=1
 		else:
 			dict[i]+=1
+	print("dictionary: ", dict)
 	proportions(dict, contentFile)
 	return dict
 
@@ -63,7 +66,7 @@ def dictionary(contentFile):
 def proportions(dictionary, contentFile):
 	for key in dictionary:
 		dictionary[key] /= len(contentFile)
-		proportions = sorted(dictionary.values(), reverse=True)
+		proportions = sorted(dictionary.values(), reverse=True)	
 	firstRound(proportions)
 	return proportions
 

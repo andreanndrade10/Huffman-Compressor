@@ -42,17 +42,30 @@ def infoRoot(rootn):
     print('Number of leaves: ', nLeaves)
     #print('Leaves: ', leaves)
     print('Tree height: ', treeHeight)
-    code(tree)
+    code1(tree)
     return tree
 
 #Function return all leaves indexes of tree as a vector
-def code(tree):
+def code1(tree):
+    tree = tree
     nNodes = tree.size
     nodes = list(range(nNodes))
     a = nodes.pop()
     vector = list(filter(lambda x: (x%2 != 0), nodes))
-    vector.append(a)    
-    return vector
+    vector.append(a)
+    code2(vector, tree)
+    return vector, tree
+
+def code2(vector,tree):
+    vectorCode = [0]
+    vectorTree = vector
+    for i in range(len(vectorTree)-1):
+        vectorCode[i] = vectorCode[i-1] * 2 + 2
+        vectorCode.append(0)
+    a = vectorCode.pop()
+    vectorCode.insert(0,a)
+    print(vectorCode)
+    return vectorCode
 
       
 
