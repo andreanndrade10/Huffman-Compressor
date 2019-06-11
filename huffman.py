@@ -10,11 +10,13 @@ print(" ")
 
 
 ####################################################################
+#Global variables
+symbol = []
+
+
+
 
 #return string or file choosen to compress
-keys = []
-
-
 def main():
 	init()
 
@@ -42,7 +44,6 @@ def readFile(file):
 	f = open(file, "rb")
 	if f.mode == 'rb':
 		content = f.read()
-		#print(content)
 		dictionary(content)
 		return content
 
@@ -58,16 +59,18 @@ def dictionary(contentFile):
 			dict[i]=1
 		else:
 			dict[i]+=1
-	print("dictionary: ", dict)
 	proportions(dict, contentFile)
+	symbol = dict.keys()
 	return dict
 
 # returns VECTOR with proportions
 def proportions(dictionary, contentFile):
+	global symbol
+	symbol = dictionary.keys()
 	for key in dictionary:
 		dictionary[key] /= len(contentFile)
-		proportions = sorted(dictionary.values(), reverse=True)	
-	firstRound(proportions)
+		proportions = sorted(dictionary.values(), reverse=True)
+	firstRound(proportions, symbol)
 	return proportions
 
 
